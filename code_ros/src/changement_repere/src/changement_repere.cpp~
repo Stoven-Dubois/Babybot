@@ -1,0 +1,32 @@
+#include <ros/ros.h>
+#include <sensor_msgs/LaserScan.h>
+#include <iostream>
+
+ros::Publisher publi;
+sensor_msgs::LaserScan new_scan;
+
+
+
+void chatterCallback(sensor_msgs::LaserScan::ConstPtr scan){
+  new_scan = *scan;
+  int nb_mesures = ((new_scan.angle_max - new_scan.angle_min)/new_scan.angle_increment)+1;
+  int i;
+  float alpha = 0.052;	//angle de la caméra par rapport au plan horizontal
+  float cos = 0.999;
+  for(i=0;i<nb_mesures;i++){
+    new_scan.ranges[i] = new_scan.ranges[i]*cos; //On met les valeurs du laser issu de la kinect à la bonne valeur en fonction de l'angle de la caméra
+  }
+  //new_scan.header.frame_id = "nv_camera_link"; 
+  publi.publish(new_scan);
+}
+
+int main(int argc, char** argv){
+  ros::init(argc, argv, "changement_repere_node");
+  ros::NodeHandle node;
+  publi = node.advertise<sensor_msgs::LaserScan>("nveau_scan", 1000);
+  ros::Subscriber sub = node.subscribe("kinect_scan", 1000, chatterCallback);
+  ros::Rate loop_rate(10);
+  ros::spin();
+  return 0;
+}
+      

@@ -1,0 +1,18 @@
+<launch>
+ 
+	<include file="$(find babybot_freenect)/launch/freenect.launch">
+	</include>
+	
+	<include file="$(find babybot_freenect)/launch/depth_to_scan.launch">
+	</include>
+	  
+	<node pkg="babybot_freenect" type="ajout_intensite" name="ajout_intensite">
+	</node>
+	
+	<node pkg="changement_repere" type="changement_repere" name="changement_repere">
+	</node>
+	
+	<node pkg="changement_repere" type="creation_frame" name="creation_frame">
+	</node>
+	
+</launch>

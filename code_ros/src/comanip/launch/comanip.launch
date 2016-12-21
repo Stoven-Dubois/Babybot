@@ -1,0 +1,6 @@
+<launch>
+
+	<node pkg="comanip" type="calcul_vitesse" name="calcul_vitesse" output="screen">
+	</node>
+
+</launch>

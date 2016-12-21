@@ -1,0 +1,15 @@
+<launch>
+
+	<include file="$(find babybot)/launch/modele_geom.launch">
+	</include>
+
+	<include file="$(find manette)/launch/manette.launch">
+	</include>
+
+	<include file="$(find comanip)/launch/comanip.launch">
+	</include>
+	
+	<include file="$(find lidar)/launch/suivi.launch">
+	</include>
+	
+</launch>

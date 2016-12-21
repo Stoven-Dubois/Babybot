@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <cmath>
+
+#include "ros/ros.h"
+#include "std_msgs/Float32.h"
+
+
+
+
+ros::Publisher pub; //declaration du publisher
+std_msgs::Float32 msg; //varriable du tableau
+
+void callback( const std_msgs::Float32& val)
+{
+  //recuperation des donnees lues sur le subscriber
+  float joy_X1 = val.data; //xa
+  
+ int  vit1 = (int)joy_X1 * 2;
+    
+ ROS_INFO("vitesse 1 = %d\n", vit1);
+ 
+  msg.data=vit1;
+  
+  pub.publish(msg);
+  
+}
+  
+  
+int main( int argc, char** argv )
+{
+  ros::init(argc, argv, "calcul_vitesse");
+
+  ros::NodeHandle n; //declaration de nodehandle 
+  
+  pub = n.advertise<std_msgs::Float32>("vitesse_moteur", 1);
+  
+  ros::Subscriber sub =  n.subscribe("valeur_joy", 1, callback);
+  
+    ros::spin();
+  return 0;
+}
+  
+  
+  
+  
+  
+  

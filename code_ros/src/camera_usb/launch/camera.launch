@@ -1,0 +1,17 @@
+<launch>
+
+	<include file="$(find camera_usb)/launch/camera_usb.launch">
+	</include>
+	
+	<include file="$(find camera_usb)/launch/track_marker.launch">
+	</include>
+	
+	<node pkg="camera_usb" type="camera_frame" name="camera_frame">
+	</node>
+	
+	<node pkg="camera_usb" type="camera_envoi_objectif" name="camera_envoi_objectif">
+	</node>
+	
+	<node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0.42 0.25 1.19 0 0 0 1 /base_link /camera_base 1" />  
+	
+</launch>

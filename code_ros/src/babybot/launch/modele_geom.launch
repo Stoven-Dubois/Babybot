@@ -1,0 +1,9 @@
+<launch>
+	
+	<include file="$(find rosserial_server)/launch/serial.launch">
+		<param name="port" value="dev/ttyACM0"/>
+	</include>
+	
+	<node pkg="comanip" type="vitesse_moteur" name="vitesse_moteur" output="screen">
+	</node>
+</launch>

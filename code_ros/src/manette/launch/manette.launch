@@ -1,0 +1,15 @@
+<launch>
+
+	<node pkg="rviz" type="rviz" name="rviz">
+	</node>
+
+	<node pkg="joy" type="joy_node" name="joy_node" output="screen">
+	</node>
+
+	<node pkg="manette" type="commande_manette" name="commande_manette" output="screen">
+	</node>
+
+	<node pkg="manette" type="manette_utilisateur" name="manette_utilisateur" output="screen">
+	</node>
+
+</launch>

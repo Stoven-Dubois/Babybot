@@ -1,0 +1,9 @@
+<launch>
+ 
+	<include file="$(find lidar)/launch/rplidar.launch">
+	</include>
+
+	<node pkg="lidar" type="lidar_client" name="lidar_client">
+	</node>
+	
+</launch>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<param name="/use_sim_time" value="false"/>
+
+<!-- noeud permettant l'ouverture de rviz -->
+<node pkg="rviz" type="rviz" name="rviz" 
+args="-d $(find lidar)/rviz_cfg/mapping.rviz"/>
+
+<node pkg="tf" type="static_transform_publisher" name="base_to_camera"      args="0 0 1 0 0 0 /base_link /camera_link 1" />  
+<node pkg="tf" type="static_transform_publisher" name="base_to_laser"      args="0 0 0 0 0 0 /base_link /laser 1" />  
+<node pkg="tf" type="static_transform_publisher" name="map_to_base"      args="0 0 0 0 0 0 /map /base_link 1" />
+
+<!-- différent fichier.launch dont on a besoin -->
+
+<!-- Lidar -->
+<include file="$(find lidar)/launch/rplidar.launch" />
+
+
+</launch>

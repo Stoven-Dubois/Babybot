@@ -1,0 +1,11 @@
+<launch>
+	<node pkg="changement_repere" type="odometrie" name="odometrie">
+	</node>
+	
+	<include file="$(find lidar)/launch/gmapping.launch">
+	</include>
+	
+	<include file="$(find babybot_navigation)/launch/navigation_test.launch">
+	</include>
+	
+</launch>
