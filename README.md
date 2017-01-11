@@ -16,7 +16,7 @@ Used tools: ROS, PCL library, KDevelop
 
 code_Arduino: Arduino code
 
-code_ROS: ROS_code
+code_ROS: ROS code
   - babybot: containing the global launch file
   - babybot_freenect: launching the Kinect and filtering its data
   - babybot_navigation: trajectory planning
