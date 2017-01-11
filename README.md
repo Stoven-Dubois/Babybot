@@ -3,12 +3,12 @@
 Automatic cradle for helping handicapped parents to take care of their newborn.
 
 Babybot components: 
-	- body possessing omni wheels giving it a holonomous behavior
-	- webcam, for recognizing the parent thanks to a green sphere held by their wheelchair
-	- Lidar (2D laser sensor)
-	- Kinect (3D camera)
-	- embedded computer 
-	- Arduino card for the communication between every component
+  - body possessing omni wheels giving it a holonomous behavior
+  - webcam, for recognizing the parent thanks to a green sphere held by their wheelchair
+  - Lidar (2D laser sensor)
+  - Kinect (3D camera)
+  - embedded computer 
+  - Arduino card for the communication between every component
 
 Language: C++
 
