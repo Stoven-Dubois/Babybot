@@ -1,6 +1,6 @@
 # Babybot
 
-Automatic for helping handicapped parents to take care of their newborn.
+Automatic cradle for helping handicapped parents to take care of their newborn.
 
 Babybot components: 
 	- body possessing omni wheels giving it a holonomous behavior
