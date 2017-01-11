@@ -30,4 +30,4 @@ code_ROS: ROS code
   - rplidar_ros: launching the Lidar (used by "lidar" package)
   - usb_cam: launching the webcam (used by "camera_usb" package)
   
-  Launching all the code : babybot/launch/babybot.launch
+Launch file to use : babybot/launch/babybot.launch
